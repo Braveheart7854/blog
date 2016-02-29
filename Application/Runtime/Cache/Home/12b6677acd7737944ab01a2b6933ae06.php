@@ -1,0 +1,311 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+  	<title>童海的blog</title>
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="Public/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="Public/css/font-awesome.css">
+  	<link rel="stylesheet" href="Public/css/style.css">
+  	<!--[if lt IE 9]>
+  	  <script src="js/html5shiv.min.js"></script>
+  	  <script src="js/respond.min.js"></script>
+  	<![endif]-->
+  </head>
+  
+  <body>
+  	<nav class="navbar navbar-default navbar-blog">
+      <div class="container">
+      	<div class="navbar-header">
+      	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#blogNav">
+      	  	<span class="icon-bar"></span>
+      	  	<span class="icon-bar"></span>
+      	  	<span class="icon-bar"></span>
+      	  </button>
+      	  <a href="#" class="navbar-brand">Blog</a>
+      	</div>
+      	
+      	<div id="blogNav" class="navbar-collapse collapse">
+      	  <ul class="nav navbar-nav">
+      	  	<li class="active"><a href="index.html">首页</a></li>
+      	  	<li><a href="about.html">关于</a></li>
+      	  	<li><a href="contact.html">留言</a></li>
+      	  	<li class="dropdown">
+      	  	  <a href="#" class="dropdown-toggle" data-toggle="dropdown">博文分类 <span class="caret"></span></a>
+      	  	  <ul class="dropdown-menu">
+      	  	  	<li><a href="#">碎语</a></li>
+      	  	  	<li><a href="#">随笔</a></li>
+      	  	  	<li><a href="#">杂谈</a></li>
+      	  	  	<li class="divider"></li>
+      	  	  	<li><a href="#">名人</a></li>
+      	  	  </ul>
+      	  	</li>
+      	  </ul>
+      	  
+      	  <form class="navbar-form navbar-right" method="" action="">
+      	    <div class="input-group">
+              <input type="text" class="form-control" placeholder="请输入关键字" name="kw" id="kw">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+            </div>
+      	  </form>
+      	</div>
+      </div>
+  	</nav><!--/.navbar-default-->
+  	
+  	
+  	<header class="header-blog">
+  	  <div class="container">
+  	    <h1>Blog</h1>
+        <p class="lead">农村户口，你值得拥有……</p>
+      </div>
+  	</header>
+  	
+  	<div class="container">  	  	  
+  	  <div class="row">
+  	    <div class="col-sm-8">
+		
+		 <?php if(is_array($artList)): foreach($artList as $key=>$art): ?><article class="well entry blog-well"> 
+            <h3>
+              <a href="post.html"><?php echo ($art["title"]); ?></a>
+            </h3>
+            
+            <div class="row">
+              <div class="col-sm-12">
+                <span class="column">
+                  <span class="glyphicon glyphicon-pencil icon"></span><a href="#"><?php echo ($art['author']); ?></a>
+                </span>
+                <span class="column">
+              	  <span class="glyphicon glyphicon-time icon"></span><?php echo (date("Y-m-d",$art['create_time'])); ?>
+              	</span>
+              	<span class="column">
+              	  <span class="glyphicon glyphicon-folder-open icon"></span><a href="#"><?php echo ($art['category']); ?></a>
+              	</span>
+              	<span class="column">
+              	  <span class="glyphicon glyphicon-eye-open icon"></span>120
+              	</span>
+              	<span class="column">
+              	  <span class="glyphicon glyphicon-comment icon"></span><a href="post.html#comment">5</a>
+              	</span>
+              </div>
+            </div>
+          
+            <hr class="clearfix"> 
+          
+            <div class="entry-content">
+              <div class="thumbnail text-center">
+              	<img class="img-responsive" src="Public/img/beiying.jpg">
+              </div>
+              <p><?php echo ($art['content']); ?></p> 
+             </div>
+            
+            <div class="row entry-footer">
+              <div class="col-sm-9">
+                <span class="glyphicon glyphicon-tags icon"></span><a href="#">文学</a>, <a href="#">散文</a>, <a href="#">现代作家</a>, <a href="#">文章</a>, <a href="#">朱自清</a>
+              </div>
+              
+              <div class="col-sm-3 text-right">
+              	<a href="post.html"><span class="glyphicon glyphicon-link icon"></span>阅读全文</a>
+              </div>
+            </div> 
+          </article><?php endforeach; endif; ?>
+
+            <h3>
+              <a href="post.html">鲁迅<small>（无产阶级文学家、思想家、革命家）</small></a>
+            </h3>
+            
+            <div class="row">
+              <div class="col-sm-12">
+                <span class="column">
+                  <span class="glyphicon glyphicon-pencil icon"></span><a href="#">佚名</a>
+                </span>
+                <span class="column">
+              	  <span class="glyphicon glyphicon-time icon"></span>2014年11月
+              	</span>
+              	<span class="column">
+              	  <span class="glyphicon glyphicon-folder-open icon"></span><a href="#">名人</a>
+              	</span>
+              	<span class="column">
+              	  <span class="glyphicon glyphicon-eye-open icon"></span>12
+              	</span>
+              	<span class="column">
+              	  <span class="glyphicon glyphicon-comment icon"></span><a href="post.html#comment">6</a>
+              	</span>
+              </div>
+            </div>
+          
+            <hr class="clearfix"> 
+          
+            <div class="entry-content"> 
+              <p>鲁迅（1881年9月25日－1936年10月19日），原名周樟寿，后改名周树人；字豫才，后改为豫亭，浙江绍兴会稽县人，中国现代伟大的无产阶级文学家、思想家和革命家。他是世界十大文豪之一，新文化运动的领导人、支持者，是中国无产阶级文学的奠基人，也是中国现代文学的一面旗帜。</p>
+              <p>鲁迅出身一个封建官僚家庭。起初想实业救国，但不济。1904年初，入仙台医科专门学医。后从事文学创作，希望以此改变国民被麻木的内心，笔名鲁迅（Lution）源于革命（Revolution）。1918年5月首次用笔名“鲁迅”发表中国现代文学史上第一篇白话小说《狂人日记》。1921年发表中篇小说《阿Q正传》。1936年10月19日因肺结核病逝于上海。</p>
+            </div>
+            
+            <div class="row entry-footer">
+              <div class="col-sm-9">
+                <span class="glyphicon glyphicon-tags icon"></span><a href="#">思想家</a>, <a href="#">革命家</a>, <a href="#">中国现代作家</a>, <a href="#">鲁迅</a>, <a href="#">文学家</a>, <a href="#">中国现代文学奠基人</a>
+              </div>
+              
+              <div class="col-sm-3 text-right">
+              	<a href="post.html"><span class="glyphicon glyphicon-link icon"></span>阅读全文</a>
+              </div>
+            </div> 
+          </article>
+          
+          
+          
+          <div class="paginate text-center">
+            <ul class="pag1">
+              <li><a href="">&lt;</a></li>
+              <li><a href="">1</a></li>
+              <li><a href="">2</a></li>
+              <li><a href="">3</a></li>
+              <li><a class="active" href="">4</a></li>
+              <li><a href="">5</a></li>
+              <li><a class="more" href="">…</a></li>
+              <li><a href="">98</a></li>
+              <li><a href="">99</a></li>
+              <li><a href="">100</a></li>
+              <li><a href="">&gt;</a></li>
+            </ul>
+          </div>
+  	    </div><!--/.col-sm-8-->
+  	    
+  	    <div class="col-sm-4">
+  	      <div class="panel panel-default panel-blog">
+		    <div class="panel-heading">
+			  <h4><strong>关注</strong></h4>
+			</div>
+			
+			<div class="panel-body">
+			  <div class="row follow-me">
+			  	<div class="col-xs-3 col-sm-3 fa-hover">
+			  	  <a href="#"><i class="fa fa-weibo"></i></a>
+			  	</div>
+			  	<div class="col-xs-3 col-sm-3 fa-hover">
+			  	  <a href="#"><i class="fa fa-weixin"></i></a>
+			  	</div>
+			  	<div class="col-xs-3 col-sm-3 fa-hover">
+			  	  <a href="#"><i class="fa fa-tencent-weibo"></i></a>
+			  	</div>
+			  	<div class="col-xs-3 col-sm-3 fa-hover">
+			  	  <a href="#"><i class="fa fa-rss-square"></i></a>
+			  	</div>
+			  </div>
+			</div>
+		  </div><!--/.panel-->
+		  
+		  <div class="panel panel-default panel-blog">
+		    <div class="panel-heading">
+			  <h4><strong>分类</strong></h4>
+			</div>
+			
+			<div class="panel-body">
+		      <ul class="nav nav-pills">
+                <li><a href="#">碎语 <span class="badge">3</span></a></li>
+                <li><a href="#">随笔 <span class="badge">13</span></a></li>
+                <li><a href="#">杂谈 <span class="badge">300</span></a></li>
+                <li><a href="#">名人 <span class="badge">50</span></a></li>
+              </ul>
+			</div>
+		  </div><!--/.panel-->
+		  
+		  <div class="panel panel-default panel-blog">
+		    <div class="panel-heading">
+			  <h4><strong>最新文章</strong></h4>
+			</div>
+			
+			<div class="panel-body">
+			  <ul class="list-group article-list"> 
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">背影</a>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">鲁迅<small>（无产阶级文学家、思想家、革命家）</small></a>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">背影</a>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">鲁迅<small>（无产阶级文学家、思想家、革命家）</small></a>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">背影</a>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">鲁迅<small>（无产阶级文学家、思想家、革命家）</small></a>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">背影</a>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">鲁迅<small>（无产阶级文学家、思想家、革命家）</small></a>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">背影</a>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <a href="">鲁迅<small>（无产阶级文学家、思想家、革命家）</small></a>
+                </li>
+			  </ul>
+			</div>
+		  </div><!--/.panel-->
+		  
+		  <div class="panel panel-default panel-blog">
+		    <div class="panel-heading">
+			  <h4><strong>标签</strong></h4>
+			</div>
+			
+			<div class="panel-body blog-label clearfix">
+		      <a href="#" class="label label-primary">文学</a>
+		      <a href="#" class="label label-primary">中国现代文学奠基人</a>
+		      <a href="#" class="label label-primary">思想家</a>
+		      <a href="#" class="label label-primary">文章</a>
+		      <a href="#" class="label label-primary">中国现代作家</a>
+		      <a href="#" class="label label-primary">朱自清</a>
+		      <a href="#" class="label label-primary">革命家</a>
+		      <a href="#" class="label label-primary">鲁迅</a>
+		      <a href="#" class="label label-primary">现代作家</a>
+			</div>
+		  </div><!--/.panel-->
+		  
+		  <div class="panel panel-default panel-blog">
+		    <div class="panel-heading">
+			  <h4><strong>归档</strong></h4>
+			</div>
+			
+			<div class="panel-body">
+		      <select id="archive" class="form-control">
+                <option value="February 2014">February 2014</option>
+                <option value="February 2013">February 2013</option>
+                <option value="February 2012">February 2012</option>
+              </select>
+			</div>
+		  </div><!--/.panel-->
+  	    </div><!--/.col-sm-4-->
+  	  </div><!--/.row-->
+  	</div><!--/.container-->
+  	
+  	<footer id="footer"> 
+      <div class="container">
+        <p>
+          &copy; 2014 &nbsp;&nbsp; Design And Code By <a href="#">农村户口丶你值得拥有</a> 
+      </div> 
+    </footer>
+  	
+  	<script src="js/jquery.min.js"></script>
+  	<script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
